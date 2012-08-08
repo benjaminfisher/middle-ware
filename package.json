@@ -1,6 +1,7 @@
 {
-  "name": "application-name",
+  "name": "middle_ware_test",
   "version": "0.0.1",
+  "author": "Benjamin J. Fisher <benjamin.fisher@ymail.com",
   "private": true,
   "scripts": {
     "start": "node app"
