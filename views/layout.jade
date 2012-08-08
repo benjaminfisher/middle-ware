@@ -1,7 +1,18 @@
+- var date = new Date();
+
 doctype 5
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    header
+      nav
+        ul
+          li: a(href='/') home
+          li: a(href='another.html') static page
+      
+    #content
+      block content
+      
+    footer &copy;#{date.getFullYear()} Benjamin J. Fisher

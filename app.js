@@ -8,18 +8,27 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
-var app = express();
+var app = express()
+  , oneDay = 86400000;
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.favicon());
+  
+  // Connect favicon middle-ware (maxAge option is required).
+  app.use(express.favicon(__dirname + '/public/favicon.ico'), {maxAge: oneDay});
+  
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+  
+  // Connect Static Middle-ware is implemented here
+  app.use(express.static(path.join(__dirname, 'public')), {maxAge: oneDay, redirect: true});
+  
+  // Connect Directory Middle-ware
+  app.use(express.directory(path.join(__dirname, 'public')));
 });
 
 app.configure('development', function(){
@@ -27,6 +36,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/dir', routes.dir);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

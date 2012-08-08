@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to the #{title}
+  
+  p Here is some content
+  
+  audio(controls)
+    source(src="music/comfort_eagle.mp3")
+    p Your browser does not support the <code>audio</code> tag.
+    
+  p And here is a <strong>cat</strong>.
+  img(src='images/the_cat.jpg')

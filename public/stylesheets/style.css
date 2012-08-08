@@ -3,6 +3,48 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+header {
+	background: #efefef;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+header nav{
+	padding: 0.5em;
+	overflow: auto;
+}
+header nav li {
+	float:left;
+	list-style-type: none;
+	margin:1em;
+}
+header nav li a{
+	text-decoration:none;
+}
+
+header nav li a:hover{
+	text-decoration:underline;
+}
+
+footer{
+	clear:both;
+	left:0;
+	margin-top:2em;
+	width:100%;
+}
+
 a {
   color: #00B7FF;
+}
+
+audio{
+	font: "Comic Sans";
+	color: #11330a;
+	border-radius: 15px;
+}
+
+#content{
+	overflow:auto;
 }
