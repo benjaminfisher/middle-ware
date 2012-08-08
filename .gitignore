@@ -14,6 +14,6 @@ results
 node_modules
 npm-debug.log
 
-*Aptana Files*
-**************
+#Aptana Files#
+##############
 .project
